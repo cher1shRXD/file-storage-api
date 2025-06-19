@@ -27,6 +27,7 @@ async def upload_file(file: UploadFile = File(...)):
         shutil.copyfileobj(file.file, buffer)
 
     return {
+        "filename": file.filename,
         "url": f"https://cloud.cher1shrxd.me/uploads/{new_filename}"
     }
 
