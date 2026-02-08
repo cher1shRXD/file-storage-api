@@ -22,7 +22,7 @@ app.add_middleware(
 @app.post("/files/upload")
 async def upload_file(file: UploadFile = File(...)):
     file_ext = os.path.splitext(file.filename)[1].lower()
-    image_extensions = {'.jpg', '.jpeg', '.png', '.gif', '.bmp', '.tiff', '.webp'}
+    image_extensions = {'.jpg', '.jpeg', '.png', '.bmp', '.tiff', '.webp'}
     
     new_filename = f"{uuid.uuid4()}"
     
